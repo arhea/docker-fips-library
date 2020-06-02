@@ -2,10 +2,10 @@
 
 This repository contains sample implementations of FIPS 140-2 compliant container images. Containers need to run on host operating systems that have FIPS 140-2 enabled.
 
-- Alpine Linux - Compiles the FIPS 140-2 compliant OpenSSL 1.0.2k-fips on Alpine
-- Amazon Linux 2 - Installs the FIPS 140-2 compliant OpenSSL and `dracut-fips` package
-- CentOS 7 - Installs the FIPS 140-2 compliant OpenSSL and `dracut-fips` package
-- NGINX - Compiles NGINX using a FIPS 140-2 compliant version of OpenSSL
+- [Alpine Linux](./alpine/) - Compiles the FIPS 140-2 compliant OpenSSL 1.0.2k-fips on Alpine
+- [Amazon Linux 2](./amazonlinux/) - Installs the FIPS 140-2 compliant OpenSSL and `dracut-fips` package
+- [CentOS 7](./centos/) - Installs the FIPS 140-2 compliant OpenSSL and `dracut-fips` package
+- [NGINX](./nginx/) - Compiles NGINX using a FIPS 140-2 compliant version of OpenSSL
 
 ## Usage
 
