@@ -59,3 +59,21 @@ docker container run --rm --name=fips-nginx \
     -v $(pwd)/mysite.conf:/etc/nginx/conf.d/default.conf \
     fips/nginx:1.17.10-alpine
 ```
+
+## Building
+
+This image supports multiple base images and different configurations.
+
+| Options | Default | Supported Values | Description |
+|---|---|---|
+| DISTRO_NAME | `alpine` | `alpine`, `centos`, `amazonlinux` | Configure which base image to use for the nginx container. |
+| IMAGE_REGISTRY | `073455283520.dkr.ecr.us-east-2.amazonaws.com` | Any Docker Registry | The URL of the Docker registry to push the images. |
+| IMAGE_NAME | `fips/nginx` | Any | The name of the image repository within the Docker registry. |
+| IMAGE_TAG | `1.17-$(DISTRO_NAME)` | Any | The image tag associated with the build. |
+| NGINX_VERSION | `1.17.10` | [Versions](http://nginx.org/en/download.html) | The NGINX version to build. |
+
+```bash
+make DISTRO_NAME=alpine build
+make DISTRO_NAME=centos build
+make DISTRO_NAME=amazonlinux build
+```

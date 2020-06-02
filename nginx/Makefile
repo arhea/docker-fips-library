@@ -3,6 +3,7 @@ DISTRO_NAME=alpine
 IMAGE_REGISTRY=073455283520.dkr.ecr.us-east-2.amazonaws.com
 IMAGE_NAME:=fips/nginx
 IMAGE_TAG:=1.17-$(DISTRO_NAME)
+NGINX_VERSION=1.17.10
 
 define DEFAULT_SERVER_CONFIG
 server {
@@ -45,12 +46,14 @@ build:
 	@docker image build \
 		-f ./$(DISTRO_NAME)/Dockerfile \
 		-t $(IMAGE_NAME):$(IMAGE_TAG) \
+		--build-arg NGINX_VERSION=$(NGINX_VERSION) \
 		-t $(IMAGE_REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
 
 build-dev:
 	@docker image build \
 		-f ./$(DISTRO_NAME)/Dockerfile \
 		-t $(IMAGE_NAME):$(IMAGE_TAG) \
+		--build-arg NGINX_VERSION=$(NGINX_VERSION) \
 		-t $(IMAGE_REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
 
 push: build
