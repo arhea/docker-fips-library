@@ -93,8 +93,7 @@ RUN mkdir -p /tmp \
     && mv /etc/nginx/html /usr/share/nginx/html \
     && chown nginx:nginx -R /usr/share/nginx \
     && chown nginx:nginx -R /var/cache/nginx \
-    && rm -f /etc/nginx/*.default \
-    && mkdir /docker-entrypoint.d
+    && rm -f /etc/nginx/*.default
 
 COPY shared/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY shared/nginx/mime.types /etc/nginx/mime.types

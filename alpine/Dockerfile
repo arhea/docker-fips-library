@@ -49,5 +49,5 @@ RUN apk update \
     && apk del .build-deps   
 
 ENV OPENSSL_FIPS 1
-ENV PATH /usr/local/ssl/bin:$PATH
+ENV PATH /usr/local/ssl/bin::$PATH
 
